@@ -16,6 +16,7 @@
     "@vercel/static-build": "^1.2.1",
     "cors": "2.8.5",
     "express": "4.21.1",
+    "mongodb": "6.9.0",
     "zod": "3.23.8"
   }
 }

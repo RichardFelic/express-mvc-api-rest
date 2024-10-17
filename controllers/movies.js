@@ -1,5 +1,6 @@
-import { MovieModel } from "../models/movie.js";
+import { MovieModel } from "../models/local-file-system/movie.js";
 import { validateMovie, validatePartialMovie } from "../schemas/movies.js";
+// import mongoose from "mongoose";
 
 export class MoviesController {
   static async getAll(req, res) {
@@ -9,6 +10,28 @@ export class MoviesController {
   }
 
   static async getById(req, res) {
+    // MONGODB no falla porque el id es un ObjectId
+    // import mongoose from "mongoose";
+    // const { id } = req.params;
+    // const objectId = mongoose.Types.ObjectId(id);
+    // const movie = await MovieModel.getById({ id: objectId });
+    // if (!movie) {
+    //   return res.status(404).json({ message: "Movie not found" });
+    // }
+    // res.json(movie);
+
+    // MONGODB este no falla porque el id es un ObjectId
+    // const { id } = req.params;
+    // if (!id || typeof id !== "string" || id.length !== 24) {
+    //   return res.status(400).json({ message: "Invalid id" });
+    // }
+    // const movie = await MovieModel.getById({ id });
+    // if (!movie) {
+    //   return res.status(404).json({ message: "Movie not found" });
+    // }
+    // res.json(movie);
+
+    // mongo: codigo falla porque el id no es un ObjectId
     const { id } = req.params;
     const movie = await MovieModel.getById({ id });
     if (!movie) {
