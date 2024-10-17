@@ -2,14 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "./app.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "cmd": "npm run start"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "app.js"
     }
   ]
 }
