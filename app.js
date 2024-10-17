@@ -135,4 +135,4 @@ app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`);
 });
 
-export default app;
+module.exports = app;
