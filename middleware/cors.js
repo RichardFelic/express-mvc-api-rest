@@ -6,9 +6,11 @@ const ACCEPTED_ORIGIN = [
   "http://localhost:8080",
   "http://10.0.0.22:8080",
   "http://10.0.0.22:5500",
+  "http://localhost:5173",
+  "http://10.0.0.22:5173",
 ];
 
-export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGIN }={}) =>
+export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGIN } = {}) =>
   cors({
     origin: (origin, callback) => {
       if (acceptedOrigins.includes(origin) || !origin) {
